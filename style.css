@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsla(0, 0%, 0%, 0.76);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    border: 1px solid hsla(0, 0%, 100%, 0.877);
+}
+
+.gallery {
+    display: grid;
+    gap: 8px;
+
+    /* "dense" is for filling the missing gaps */
+    /* Not recommended for accessibility reasons */
+    grid-auto-flow: row dense;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+    /* As I've defined no rows explicitly, these rules are for implicit rows */
+    grid-auto-rows: 150px;
+}
+
+.tall-img {
+    grid-row: span 2;
+}
+.wide-img {
+    grid-column: span 2;
+}
